@@ -3,6 +3,10 @@ name: expense
 networks:
   default:
     name: expense
+volumes:
+  mysql:
+    external: true
+    # docker volume created mysql  
 services:
   mysql:
     image: mysql:v1.0.0
