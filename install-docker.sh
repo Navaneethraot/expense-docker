@@ -3,18 +3,17 @@ USERID=$(id -u)
 R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
-W="\e[0m"
+N="\e[0m"
 if [ $USERID -ne 0 ]
 then
-     echo -e "$2 ...$R FAILED $W"
+     echo -e "$R Please run this script with root access." $W"
+     exit 1 # manually exit if error comes.
     else
-        echo -e "$2 ...$G SUCCESS $W"
+        echo -e "$G You are super user $N"
 fi
 
 #check whether root user or not
-R="\e[31m"
-N="\e[0m"
-#
+
 yum install -y yum-utils
 yum-config-manager --add-repo https://download.docker.com/linux/rhel/docker-ce.repo
 yum install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
