@@ -1,4 +1,11 @@
 #!/bin/bash
+if [ (id -u) -ne 0 ]
+then
+    echo "Please run this script with root access."
+    exit 1 # manually exit if error comes.
+else
+    echo "You are super user."
+fi
 
 #check whether root user or not
 R="\e[31m"
