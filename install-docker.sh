@@ -5,13 +5,13 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 
-# if [ $USERID -ne 0 ]
-# then
-#      echo -e "$R Please run this script with root access." $N"
-#      exit 1 # manually exit if error comes.
-#     else
-#         echo -e "$G You are super user $N"
-# fi
+ if [ $USERID -ne 0 ]
+ then
+    echo -e "$R Please run this script with root access." $N"
+     exit 1 # manually exit if error comes.
+    else
+         echo -e "$G You are super user $N"
+ fi
 
 #check whether root user or not
 
